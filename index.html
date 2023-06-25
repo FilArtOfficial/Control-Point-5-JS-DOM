@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Форма для банковской карты</title>
+  <style>
+    /* Стиль для миниатюры карты */
+    #card-thumbnail {
+      width: 200px;
+      height: 130px;
+      background: gray;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: center;
+      flex-wrap: wrap;
+    }
+
+    #card-thumbnail span {
+      display: block;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <form id="card-form">
+    <label for="bank-name">Название банка:</label>
+    <input type="text" name="bankName" required><br>
+
+    <label for="payment-system">Тип платежной системы:</label>
+    <select name="paymentSystem" required>
+      <option value="">Выберите тип платежной системы</option>
+      <option value="visa">Visa</option>
+      <option value="mastercard">MasterCard</option>
+      <option value="maestro">Maestro</option>
+    </select><br>
+
+    <label for="card-number">Номер карты:</label>
+    <input type="text" name="cardNumber" pattern="[0-9]{16}" maxlength="16" required><br>
+
+    <label for="cardholder-name">Имя держателя карты:</label>
+    <input type="text" name="cardholderName" required><br>
+
+    <label for="expiry-date">Месяц и год окончания карты:</label>
+    <input type="month" name="expiryDate" required><br>
+
+    <div id="card-thumbnail">
+      <span>Название банка</span>
+      <span>Тип платежной системы</span>
+      <span>Номер карты</span>
+      <span>Имя держателя карты</span>
+      <span>Месяц и год окончания карты</span>
+    </div>
+
+    <button type="submit">Отправить</button>
+  </form>
+
+  <table id="card-table">
+    <thead>
+      <tr>
+        <th>Название банка</th>
+        <th>Тип платежной системы</th>
+        <th>Номер карты</th>
+        <th>Имя держателя карты</th>
+        <th>Месяц и год окончания карты</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+<script src="script.js"></script>
+</body>
+</html>
+
+
